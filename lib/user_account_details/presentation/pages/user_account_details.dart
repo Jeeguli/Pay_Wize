@@ -183,23 +183,23 @@ class _UserAccountDetailsState extends State<UserAccountDetails> {
               SizedBox(height: 20),
               TextFormField(
                 textCapitalization: TextCapitalization.words,
-              validator: (value) {
-  value = value?.trim();
-  if (value == null || value.isEmpty) {
-    return 'Amount should not be empty';
-  }
-  final double? amount = double.tryParse(value);
-  if (amount == null) {
-    return 'Enter a valid numeric amount';
-  }
-  if (amount < 10) {
-    return 'Amount must be at least Rs.10';
-  }
-  if (amount > 100000) {
-    return 'Amount must not exceed Rs.10,0000';
-  }
-  return null;
-},
+                validator: (value) {
+                  value = value?.trim();
+                  if (value == null || value.isEmpty) {
+                    return 'Amount should not be empty';
+                  }
+                  final double? amount = double.tryParse(value);
+                  if (amount == null) {
+                    return 'Enter a valid numeric amount';
+                  }
+                  if (amount < 10) {
+                    return 'Amount must be at least Rs.10';
+                  }
+                  if (amount > 100000) {
+                    return 'Amount must not exceed Rs.10,0000';
+                  }
+                  return null;
+                },
                 cursorColor: Colors.blue,
                 controller: _amountController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,

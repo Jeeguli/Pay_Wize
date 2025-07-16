@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -83,6 +84,8 @@ Future<void> _openFilterDialog(context) async {
   }
 
   DateTimeRange? selectedDateRange = provider.dateTimeRange;
+  
+  String dateRangeText = "Select Date Range";
 
   await showDialog(
     context: context,
@@ -102,15 +105,27 @@ Future<void> _openFilterDialog(context) async {
                   .map((s) => DropdownMenuItem(value: s, child: Text(s)))
                   .toList(),
             ),
-            ElevatedButton(
-              child: Text("Select Date Range"),
+            ElevatedButton( 
+              
+              child: Text(dateRangeText,style: GoogleFonts.poppins(fontSize: 15,fontWeight: FontWeight.w400,),),
               onPressed: () async {
                 DateTimeRange? picked = await showDateRangePicker(
                   context: context,
                   firstDate: DateTime(2020),
                   lastDate: DateTime.now(),
                 );
-                if (picked != null) selectedDateRange = picked;
+
+                if(picked != null){
+                  
+                
+                final startdate = DateFormat("yyyy-MM-dd").format(picked.start);
+                final endDate = DateFormat("yyyy-MM-dd").format(picked.end);
+               
+                print("First Date: ${picked?.start}");
+                print("Last Date: ${picked?.end}");
+                 selectedDateRange = picked;
+                  dateRangeText = "$startdate - $endDate";
+              }
               },
             ),
           ],

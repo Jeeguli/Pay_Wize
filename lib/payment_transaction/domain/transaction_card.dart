@@ -13,7 +13,7 @@ class TransactionCard extends StatelessWidget {
       elevation: 2,
       margin: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      color: Colors.white,
+      color: _getStatusColor(transaction.status),
       shadowColor: Colors.black,
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -36,7 +36,7 @@ class TransactionCard extends StatelessWidget {
                   style: GoogleFonts.poppins(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
-                    color: _getStatusColor(transaction.status),
+                    color: Colors.white,
                   ),
                 ),
               ],
@@ -44,7 +44,7 @@ class TransactionCard extends StatelessWidget {
 
             SizedBox(height: 6),
 
-            /// Row with Date and Type
+            /// Row with Date and Typegit 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
