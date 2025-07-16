@@ -20,7 +20,6 @@ class TransactionCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// Row with Amount and Status
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -44,7 +43,7 @@ class TransactionCard extends StatelessWidget {
 
             SizedBox(height: 6),
 
-            /// Row with Date and Typegit 
+           
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -53,7 +52,7 @@ class TransactionCard extends StatelessWidget {
                   style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey[700]),
                 ),
                 Text(
-                  transaction.type, // "Credit" or "Debit"
+                  transaction.type,
                   style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w500),
                 ),
               ],

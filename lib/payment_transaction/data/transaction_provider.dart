@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 
 
 class TransactionProvider extends ChangeNotifier {
-final MockApi _api = MockApi();
 
 List<Transaction> _transctionList = [];
 List<Transaction> _filteredTransaction = [];

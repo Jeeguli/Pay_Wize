@@ -99,7 +99,6 @@ class _UserAccountDetailsState extends State<UserAccountDetails> {
               TextFormField(
                 textCapitalization: TextCapitalization.words,
                 validator: (value) {
-                  // Trim leading and trailing spaces before validation
                   value = value?.trim();
                   if (value == null || value.isEmpty) {
                     return 'Name should not be empty';
@@ -111,7 +110,7 @@ class _UserAccountDetailsState extends State<UserAccountDetails> {
                   if (!nameExp.hasMatch(value)) {
                     return 'Name cannot contain numbers or special characters';
                   }
-                  return null; // No error if validation passes
+                  return null; 
                 },
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 cursorColor: Colors.blue,

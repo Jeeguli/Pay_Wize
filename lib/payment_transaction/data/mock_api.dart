@@ -4,7 +4,6 @@ import 'package:fintech_app/payment_transaction/presentation/model/transaction_m
 
 class MockApi {
   Future<List<Transaction>> mockApiService() async {
-     print("Fetching mock data...");
     final mockData = '''
 [
 {
